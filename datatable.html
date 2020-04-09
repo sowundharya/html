@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>datatable</title>
+<style>
+    table{ 
+         color: #333;
+         font-family: Helvetica, Arial, sans-serif;
+         width: 650px; 
+         border-collapse: collapse; 
+         border-spacing: 0; 
+         margin: 20px 0;
+    }
+    table, th, td{
+         border: 1px solid transparent; 
+         height: 30px; 
+         transition: all 0.3s; ;
+    }
+    table th{
+        background: #DFDFDF;  /* Darken header a bit */
+          font-weight: bold;
+    } table td{
+        background: #FAFAFA;
+        text-align: center;
+    }
+    tr:nth-child(even) td { background: #F1F1F1; }         
+    tr:nth-child(odd) td { background: #FEFEFE; }  
+
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".add-row").click(function(){
+            var name = $("#name").val();
+            var roll_no = $("#rn").val();
+            var dept = $("#dept").val();
+            var markup = "<tr><td><input type='checkbox' name='record'></td><td>" + name + "</td><td>" +roll_no + "</td><td>" +dept+ "</td></tr>";
+            $("table tbody").append(markup);
+        });
+        
+        // Find and remove selected table rows
+        $(".delete-row").click(function(){
+            $("table tbody").find('input[name="record"]').each(function(){
+                if($(this).is(":checked")){
+                    $(this).parents("tr").remove();
+                }
+            });
+        });
+    });    
+</script>
+</head>
+<body>
+    <center>
+     <h1 style="font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif">STUDENTS DATA</h1>
+    <form>
+        <input type="text" id="name" placeholder="Name" style="border: 2px solid #555";>
+        <input type="number" id="rn" placeholder="Register number" style="border: 2px solid #555";>
+        <select id="dept" style="border: 2px solid #555 ;width:200px">
+        <option value="-">department</option>
+        <option value="CSE">CSE</option>
+        <option value="IT">IT</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="MECH">MECH</option>
+        <option value="BME">BME</option>
+        <option value="AERO">AERO</option>
+        <option value="CIVIL">CIVIL</option>
+        <option value="EIE">EIE</option>
+        </select>
+       <!----<input type="dept" id="dept" placeholder="department">-->
+        <input type="button" class="add-row" value="Add Row" style="background-color: #e7e7e7; color: black;">
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>Select</th>
+                <th>Name</th>
+                <th>register number</th>
+                <th>department</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+    <br><br><button type="button" class="delete-row" style="background-color: #e7e7e7; color: black;">Delete Row</button></center>
+</body> 
+</html>
