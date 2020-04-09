@@ -196,6 +196,18 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 20px;
 }
+	
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
 </style>
 </head>
 
@@ -263,7 +275,7 @@ input[type=submit]:hover {
         <div class="container">
         <h1 class="text-center">Blog</h1>
          <div class="row">
-          <div class="col-md-4 col-lg-4 col-sm-12">
+          <div class="column">
            <div class="card">
             <div class="card-img">
              <img src="management.jpg" class="img-fluid">
@@ -281,7 +293,7 @@ input[type=submit]:hover {
             </div>
            </div>
           </div>
-          <div class="col-md-4 col-lg-4 col-sm-12">
+          <div class="column">
            <div class="card">
             <div class="card-img">
              <img src="Infrastructure.jpg" class="img-fluid">
@@ -299,7 +311,7 @@ input[type=submit]:hover {
             </div>
            </div>
           </div>
-          <div class="col-md-4 col-lg-4 col-sm-12">
+          <div class="column">
            <div class="card">
             <div class="card-img">
              <img src="sports.jpg" class="img-fluid">
@@ -396,3 +408,4 @@ input[type=submit]:hover {
     }
     </script>
 </html>
+  
