@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>lowercase and special character</title>
+</head>
+<body>
+    Enter some text: <br>
+    <input type="text" id="textbox">
+    <button onclick="count()">lowercase</button>
+    <button onclick="num()">digit</button>
+  <br>
+  
+  <script type="text/javascript">
+    function count(){
+      var mytext= document.getElementById("textbox").value;
+      var lower = (mytext.match(/[a-z]/g) || []).length;
+      alert(lower);
+    }
+    function num(){
+       var mytext= document.getElementById("textbox").value;
+        var num = (mytext.match(/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?\d+]/g) || []).length; 
+        alert(num);
+    }
+  </script>
+</body>
+</html>

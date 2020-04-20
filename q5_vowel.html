@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+    <script>
+        function Vowels() 
+        {
+            var str = document.getElementById('text').value;
+            var count = 0;
+            for (var i = 0; i < str.length; i++) 
+            {
+                if (str.charAt(i).match(/[aeiouAEIOU]/))
+                    count++;
+            }
+            document.getElementById('vcount').innerHTML = "Total:"+count;
+        }
+        function vow(a)
+        {
+            var str = document.getElementById('text').value;
+            str = str.toLowerCase();
+            var c =0;
+            for (var i = 0; i < str.length; i++)
+            {
+                if (str.charAt(i)==a) 
+                    c++;
+            }
+            document.getElementById('vcount').innerHTML = document.getElementById('vcount').innerHTML+"<br>"+a+":"+c;
+        }
+    </script>
+    </head>
+    <body>
+    <h1> vowel count</h1>
+        Enter Text :
+        <input type='text' id='text'>
+        <input type='button' value='Vowels Count' onclick="Vowels();">
+        <input type='button' value='A' onclick="vow('a');">
+        <input type='button' value='E' onclick="vow('e');">
+        <input type='button' value='I' onclick="vow('i');">
+        <input type='button' value='O' onclick="vow('o');">
+        <input type='button' value='U' onclick="vow('u');">
+        <p id="vcount"></p>
+    </body>
+</html>
+
+
+
+
+
