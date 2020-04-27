@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <script>
+    	function doReverse()
+      {
+    		var str = document.getElementById( 'mystring' ).value;
+    		alert("Reverse of given string : "+ reverseString(str));
+    	}
+    	
+    	function reverseString( str )
+      {
+    		str = str.split(''); 
+    		str = str.reverse(); 
+    		str = str.join(''); 
+    		return str;
+    	}
+
+      
+  		function checkPalindrome()
+      {
+        var revStr = "";
+        var str = document.getElementById("mystring").value;
+        var i = str.length;
+        for(var j=i; j>=0; j--)    
+          revStr = revStr+str.charAt(j);
+        if(str == revStr) 
+          alert(str+" is Palindrome");
+        else 
+          alert(str+" is not a Palindrome");
+      }
+      function isVowel(a)
+      {
+        return(a=='a'||a=='i'||a=='e'||a=='o'||a=='u')
+      }
+      function getVowels() 
+      {
+        var result = "";
+        var input = document.getElementById("mystring").value;
+        for (var i = 0; i < input.length; i++) 
+        {
+          if (isVowel(input.charAt(i))) 
+            result = result.concat(input.charAt(i) + "");
+        }
+        if(result.length!=0)
+          alert("Vowels found : "+result);
+        else
+          alert("No Vowels found");
+      }
+
+
+</script>
+</script>
+</head>
+<body>
+
+	<input type="text" id="mystring" value=" " />
+  <input type="submit" value="Get Vowels" onclick="getVowels();"/>
+	<input type="submit" value="Palindrome" onclick="checkPalindrome();"/>
+	<input type="submit" value="Reverse" onclick="doReverse();"/>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script type="text/javascript">
+    var number = [];
+
+    function add()
+    {
+      var a = document.getElementById("input");
+      number.push(a.value);
+      document.getElementById("av").innerHTML="Array values : "+number
+    }
+
+    function asc()
+    {
+      number.sort(function(a,b){return a-b});
+      document.getElementById("asc").innerHTML="Ascending Order : "+number;
+    }
+
+    function dsc()
+    {
+      number.sort(function(b,a){return a-b});
+      document.getElementById("dsc").innerHTML="Descending Order : "+number;
+    }
+    function find()
+    {
+      var a = document.getElementById("input");
+      var f=0;
+      for(var i=0;i<number.length;i++)
+      {
+        if(number[i]==a.value)
+          f=1;
+      }
+      if(f==1)
+        document.getElementById("find").innerHTML="Element : "+a.value+" found";
+      else
+        document.getElementById("find").innerHTML="Element : "+a.value+" not found";
+
+    }
+    </script>
+    <form>
+      <input id="input" type=text>
+      <input type=button onclick="add()" value="Add Number"/>
+      <input type=button onclick="asc()" value="Ascending Order"/>
+      <input type=button onclick="dsc()" value="Deccending Order"/>
+      <input type=button onclick="find()" value="Find"/>
+    </form>
+    <p id="av"></p><br>
+    <p id="asc"></p><br>
+    <p id="dsc"></p><br>
+    <p id="find"></p><br>
+  </body>
+</html>​
